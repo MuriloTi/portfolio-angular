@@ -1,0 +1,127 @@
+@use 'styles/mixins' as m;
+
+.hero {
+  padding-top: calc(var(--header-height) + 2.5rem);
+  padding-bottom: 3.5rem;
+  background-image: var(--hero-gradient);
+
+  @include m.from(md) {
+    padding-top: calc(var(--header-height) + 5rem);
+    padding-bottom: 5rem;
+  }
+
+  &__inner {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+
+    @include m.from(md) {
+      grid-template-columns: 1.4fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__greeting {
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+
+  &__name {
+    margin-top: 0.25rem;
+    font-size: clamp(2.25rem, 1.6rem + 3vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  &__title {
+    margin-top: 0.75rem;
+    font-size: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+    font-weight: 600;
+  }
+
+  &__stack {
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  &__tagline {
+    max-width: 38rem;
+    margin-top: 1.25rem;
+    color: var(--text-muted);
+    font-size: 1.0625rem;
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+
+    app-icon {
+      color: var(--primary);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  &__social {
+    display: block;
+    margin-top: 1.5rem;
+    margin-left: -0.625rem; // align icon glyphs with the text column
+  }
+
+  // Photo: on mobile it sits above the text.
+  &__photo {
+    display: flex;
+    justify-content: center;
+    order: -1;
+
+    @include m.from(md) {
+      order: 0;
+    }
+  }
+
+  &__photo-ring {
+    padding: 6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    box-shadow: var(--shadow-md);
+  }
+
+  // The source photo is landscape (1280×960) with the face left of center (~36% × 25%).
+  // Instead of a plain object-fit crop (which would show the whole torso), the image is scaled
+  // inside the circle so head and shoulders fill it. Width 210% keeps the native aspect ratio.
+  &__photo-frame {
+    position: relative;
+    width: clamp(180px, 42vw, 220px);
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: var(--surface-2);
+
+    @include m.from(md) {
+      width: clamp(260px, 28vw, 340px);
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: -25.6%;
+      width: 210%;
+      max-width: none;
+      height: auto;
+    }
+  }
+}

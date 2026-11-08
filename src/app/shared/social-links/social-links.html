@@ -1,0 +1,19 @@
+<ul class="social" [attr.aria-label]="'a11y.socialLinks' | transloco">
+  @for (link of links; track link.id) {
+    <li>
+      <a
+        class="icon-button"
+        [href]="link.href"
+        [attr.target]="link.external ? '_blank' : null"
+        [attr.rel]="link.external ? 'noopener noreferrer' : null"
+        [attr.aria-label]="
+          link.external
+            ? (link.labelKey | transloco) + ' ' + ('a11y.opensInNewTab' | transloco)
+            : (link.labelKey | transloco)
+        "
+      >
+        <app-icon [name]="link.icon" [size]="iconSize()" />
+      </a>
+    </li>
+  }
+</ul>

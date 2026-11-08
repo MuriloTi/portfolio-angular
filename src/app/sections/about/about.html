@@ -1,0 +1,22 @@
+<section id="about" class="section" aria-labelledby="about-title">
+  <div class="container">
+    <app-section-title headingId="about-title" titleKey="nav.about" />
+
+    <div class="about">
+      <div class="about__text" appReveal>
+        @for (key of paragraphKeys; track key) {
+          <p>{{ key | transloco }}</p>
+        }
+      </div>
+
+      <ul class="highlights">
+        @for (item of highlights; track item.labelKey) {
+          <li class="card highlight" appReveal>
+            <span class="highlight__value">{{ item.value }}</span>
+            <span class="highlight__label">{{ item.labelKey | transloco }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

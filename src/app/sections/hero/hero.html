@@ -1,0 +1,42 @@
+<section id="top" class="hero" aria-labelledby="hero-title">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="hero__greeting">{{ 'hero.greeting' | transloco }}</p>
+      <h1 id="hero-title" class="hero__name">{{ profile.name }}</h1>
+      <p class="hero__title">{{ 'hero.title' | transloco }}</p>
+      <p class="hero__stack">{{ 'hero.stack' | transloco }}</p>
+      <p class="hero__tagline">{{ 'hero.tagline' | transloco }}</p>
+      <p class="hero__location">
+        <app-icon name="map-pin" [size]="18" />
+        <span>{{ 'hero.location' | transloco }}</span>
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">
+          {{ 'hero.ctaProjects' | transloco }}
+          <app-icon name="arrow-right" [size]="18" />
+        </a>
+        <a class="btn btn--secondary" [href]="profile.cv" download>
+          <app-icon name="download" [size]="18" />
+          {{ 'hero.ctaCv' | transloco }}
+        </a>
+      </div>
+
+      <app-social-links class="hero__social" />
+    </div>
+
+    <div class="hero__photo">
+      <div class="hero__photo-ring">
+        <div class="hero__photo-frame">
+          <img
+            [ngSrc]="profile.photo.src"
+            [width]="profile.photo.width"
+            [height]="profile.photo.height"
+            [alt]="'hero.photoAlt' | transloco"
+            priority
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

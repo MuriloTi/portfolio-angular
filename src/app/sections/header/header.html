@@ -1,0 +1,78 @@
+<header class="header" [class.header--solid]="scrolled() || menuOpen()">
+  <div class="container header__inner">
+    <a class="brand" href="#top" [attr.aria-label]="'a11y.home' | transloco">
+      <span class="brand__mark" aria-hidden="true">{{ profile.monogram }}</span>
+      <span class="brand__name" aria-hidden="true">{{ profile.shortName }}</span>
+    </a>
+
+    <nav
+      id="primary-nav"
+      class="nav"
+      [class.nav--open]="menuOpen()"
+      [attr.aria-label]="'a11y.mainNav' | transloco"
+    >
+      <ul class="nav__list">
+        @for (item of navItems; track item.id) {
+          <li>
+            <a
+              class="nav__link"
+              [href]="'#' + item.id"
+              [class.nav__link--active]="activeSection() === item.id"
+              [attr.aria-current]="activeSection() === item.id ? 'location' : null"
+              (click)="closeMenu()"
+              >{{ item.labelKey | transloco }}</a
+            >
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <div class="lang" role="group" [attr.aria-label]="'a11y.languageSelector' | transloco">
+        <button
+          type="button"
+          class="lang__option"
+          lang="pt-BR"
+          [attr.aria-pressed]="language.lang() === 'pt-BR'"
+          (click)="setLang('pt-BR')"
+        >
+          PT<span class="visually-hidden"> – {{ 'a11y.langPt' | transloco }}</span>
+        </button>
+        <span class="lang__separator" aria-hidden="true">|</span>
+        <button
+          type="button"
+          class="lang__option"
+          lang="en-US"
+          [attr.aria-pressed]="language.lang() === 'en-US'"
+          (click)="setLang('en-US')"
+        >
+          EN<span class="visually-hidden"> – {{ 'a11y.langEn' | transloco }}</span>
+        </button>
+      </div>
+
+      <!-- Both icons are rendered; CSS shows the right one from [data-theme], so the prerendered
+           HTML already matches the theme applied by the inline script. -->
+      <button
+        type="button"
+        class="icon-button theme-toggle"
+        [attr.aria-label]="(theme.isDark() ? 'a11y.themeToLight' : 'a11y.themeToDark') | transloco"
+        (click)="theme.toggle()"
+      >
+        <app-icon class="theme-toggle__icon theme-toggle__icon--moon" name="moon" />
+        <app-icon class="theme-toggle__icon theme-toggle__icon--sun" name="sun" />
+      </button>
+
+      <button
+        #menuButton
+        type="button"
+        class="icon-button menu-toggle"
+        aria-controls="primary-nav"
+        [attr.aria-expanded]="menuOpen()"
+        [attr.aria-label]="(menuOpen() ? 'a11y.closeMenu' : 'a11y.openMenu') | transloco"
+        (click)="toggleMenu()"
+      >
+        <app-icon [name]="menuOpen() ? 'close' : 'menu'" [size]="22" />
+      </button>
+    </div>
+  </div>
+</header>

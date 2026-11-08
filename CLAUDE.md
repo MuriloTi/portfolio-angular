@@ -49,6 +49,15 @@ Fases sugeridas:
 
 **Decisões da Fase 3:** Transloco 8.4 configurado em `core/provide-i18n.ts` (`provideI18n()`), com `defaultLang: pt-BR` (prerender) e `fallbackLang: en-US`. Um `provideAppInitializer` chama `LanguageService.init()`, que carrega o JSON do idioma inicial **antes** do primeiro render. Constantes e helpers em `core/i18n.ts` (`Lang`, `isLang`, `langFromBrowser`). Os JSONs usam chaves planas por seção (ex.: `experience.codecycle.b1`, `projects.financial.h3`), sem arrays; nomes próprios que não se traduzem (empresas, instituições, tecnologias) ficam nos dados em `data/`. O teste `src/i18n/translations.spec.ts` garante que os dois idiomas têm exatamente as mesmas chaves e parâmetros.
 
+**Decisões da Fase 4:**
+
+- Componentes compartilhados: `shared/icon` (SVGs inline via `@switch`, decorativos com `aria-hidden`), `shared/section-title` (`<h2>` com `headingId` para o `aria-labelledby` da seção), `shared/social-links` e a diretiva `appReveal` (animação de entrada só no browser; elementos já visíveis nunca são escondidos).
+- Utilitários globais em `styles/_utilities.scss`: `.container`, `.section` (já com `scroll-margin-top`), `.btn--primary`/`.btn--secondary`, `.icon-button` (44×44), `.card`, `.visually-hidden`.
+- Dados em `data/profile.ts` (nome, foto, CV, links sociais) e `data/navigation.ts`. O Hero usa `id="top"` (destino do logo).
+- Botão de tema: os dois ícones (sol/lua) são renderizados e o CSS mostra o certo a partir de `[data-theme]`, para o HTML pré-renderizado já sair correto.
+- Seletor de idioma: texto visível "PT"/"EN" + nome completo em `.visually-hidden` (o nome acessível contém o texto visível).
+- Foto do Hero: em vez de só `object-fit`/`object-position`, a imagem é ampliada a 210% dentro do círculo (`left: -25.6%`, `top: 0`) para enquadrar cabeça e ombros, mantendo a proporção nativa (sem warnings do `NgOptimizedImage`).
+
 ### Cuidados com SSG
 
 - Qualquer acesso a `window`, `document`, `localStorage` ou `matchMedia` deve ser protegido (`isPlatformBrowser`, `afterNextRender` ou injeção de `DOCUMENT`), para não quebrar a pré-renderização.
