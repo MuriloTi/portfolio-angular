@@ -47,6 +47,8 @@ Fases sugeridas:
 
 **Decisões da Fase 2:** além dos tokens da tabela de tema, `_tokens.scss` define `--success`/`--success-bg` (selo "Em produção"), `--shadow-sm`/`--shadow-md` (`none` no dark), `--header-bg`, `--hero-gradient`, `--focus-ring` e raios. Sem JS, o tema segue `prefers-color-scheme` via media query. O `ThemeService` também acompanha mudanças do SO ao vivo enquanto não houver escolha salva. Use o mixin `theme-transition` nos componentes com cor de fundo/borda própria.
 
+**Decisões da Fase 3:** Transloco 8.4 configurado em `core/provide-i18n.ts` (`provideI18n()`), com `defaultLang: pt-BR` (prerender) e `fallbackLang: en-US`. Um `provideAppInitializer` chama `LanguageService.init()`, que carrega o JSON do idioma inicial **antes** do primeiro render. Constantes e helpers em `core/i18n.ts` (`Lang`, `isLang`, `langFromBrowser`). Os JSONs usam chaves planas por seção (ex.: `experience.codecycle.b1`, `projects.financial.h3`), sem arrays; nomes próprios que não se traduzem (empresas, instituições, tecnologias) ficam nos dados em `data/`. O teste `src/i18n/translations.spec.ts` garante que os dois idiomas têm exatamente as mesmas chaves e parâmetros.
+
 ### Cuidados com SSG
 
 - Qualquer acesso a `window`, `document`, `localStorage` ou `matchMedia` deve ser protegido (`isPlatformBrowser`, `afterNextRender` ou injeção de `DOCUMENT`), para não quebrar a pré-renderização.

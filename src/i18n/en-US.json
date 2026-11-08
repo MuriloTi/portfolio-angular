@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "title": "Murilo Barros Cardoso · Full-Stack Software Engineer",
+    "description": "Full-stack developer with 5+ years in C#/.NET, Angular, SQL Server and Azure. High-volume data pipelines and an ERP in production."
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "home": "Murilo Cardoso, back to top",
+    "mainNav": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "themeToDark": "Switch to dark theme",
+    "themeToLight": "Switch to light theme",
+    "languageSelector": "Language",
+    "langPt": "Português (Brasil)",
+    "langEn": "English (US)",
+    "socialLinks": "Social and contact links",
+    "opensInNewTab": "(opens in a new tab)"
+  },
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "social": {
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "title": "Full-Stack Software Engineer",
+    "stack": ".NET / C# • Angular • SQL Server • Azure",
+    "tagline": "I build reliable systems with .NET and Angular, from data pipelines processing tens of millions of lines to an ERP running in production.",
+    "location": "Rio Verde, Brazil (UTC-3) · Open to remote work",
+    "ctaProjects": "View projects",
+    "ctaCv": "Download CV",
+    "photoAlt": "Photo of Murilo Barros Cardoso"
+  },
+  "about": {
+    "p1": "I'm a full-stack developer with 5+ years of experience building web applications and REST APIs with C#/.NET and Angular. I've worked across the full .NET evolution, from .NET Core 3.1 to .NET 10, applying Clean Architecture, CQRS and SOLID principles.",
+    "p2": "I build high-volume data pipelines that process files of up to 50 million lines, and I ship full-stack products to production. I have a strong SQL Server background, from stored procedures to reporting, plus hands-on work with Azure, messaging (RabbitMQ, Azure Service Bus), Docker and CI/CD.",
+    "p3": "I hold a postgraduate degree in .NET Software Architecture. Years of ERP experience (TOTVS Protheus) in finance, billing and inventory help me translate business rules into reliable software.",
+    "highlights": {
+      "years": "years with C#/.NET and Angular",
+      "lines": "lines per file in data pipelines",
+      "files": "files processed per day",
+      "erp": "own ERP in production"
+    }
+  },
+  "skills": {
+    "groups": {
+      "backend": "Back end",
+      "frontend": "Front end",
+      "databases": "Databases",
+      "cloud": "Cloud & DevOps",
+      "messaging": "Messaging",
+      "architecture": "Architecture",
+      "quality": "Quality & Process",
+      "business": "Business systems"
+    },
+    "chips": {
+      "reporting": "Reporting",
+      "gcpBasic": "GCP (basic)",
+      "unitTesting": "Unit testing",
+      "caching": "Caching & resilience",
+      "protheus": "TOTVS Protheus (Accounting, Fixed Assets, Purchasing, Inventory, Billing, Finance)"
+    }
+  },
+  "experience": {
+    "remote": "Remote",
+    "rioVerde": "Rio Verde, Brazil",
+    "codecycle": {
+      "role": "Full-Stack Developer",
+      "period": "Oct 2024 – Present",
+      "b1": "Develop web applications and REST APIs with C#/.NET on the back end and AngularJS on the front end.",
+      "b2": "Build and maintain a pipeline of .NET console applications that processes about 50 TXT/CSV files per day, each with 2 to 50 million lines.",
+      "b3": "Multi-stage design: the first stage splits very large files into smaller chunks so downstream applications can read and process them in parallel (multiprocessing).",
+      "b4": "Write SQL Server scripts and stored procedures supporting application features and data processing."
+    },
+    "rivema": {
+      "role": "Systems Analyst & .NET Developer",
+      "period": "Dec 2023 – Aug 2026",
+      "b1": "Developed web solutions and APIs in .NET following SOLID and Clean Architecture, with Angular front ends.",
+      "b2": "Supported, configured and fixed the TOTVS Protheus ERP for a group of 5 companies (about 100 employees) across Management Accounting, Fixed Assets, Purchasing, Inventory, Billing and Finance, plus DMS modules (Auto Parts, Vehicles and Service Shop).",
+      "b3": "Built business reports with SQL Server for all 5 companies.",
+      "b4": "Managed and monitored servers and IT infrastructure for the whole group."
+    },
+    "gordon": {
+      "role": "Systems Analyst & .NET Developer",
+      "period": "Apr 2021 – Dec 2023",
+      "b1": "Developed APIs and web solutions in .NET using SOLID and layered Clean Architecture in an Agile Scrum team.",
+      "b2": "Analyzed and monitored the TOTVS ERP, fixing errors and bugs through configuration and direct database corrections.",
+      "b3": "Created SQL Server reports delivered through the ERP's reporting templates and through web applications."
+    }
+  },
+  "projects": {
+    "highlightsTitle": "Highlights",
+    "stackTitle": "Stack",
+    "galleryTitle": "Gallery",
+    "openImage": "Enlarge image: {{caption}}",
+    "financial": {
+      "subtitle": "Multi-company Financial & Operations ERP",
+      "type": "Own product · Back end + front end",
+      "period": "Jan 2023 – present",
+      "badgeProduction": "In production",
+      "badgePrivate": "Private code",
+      "description": "An ERP built to serve multiple businesses. It runs in production at its first client, a trucking company, with 7 active users, and is designed to scale with each client's headcount.",
+      "h1": "Accounts payable and receivable, banking, invoicing, service orders, driver commissions and payroll, grain freight contracts and customer advances.",
+      "h2": ".NET 10 back end with Clean Architecture and CQRS (MediatR), EF Core and SQL Server, Unit of Work transactions, soft delete with global query filters and multi-company data isolation.",
+      "h3": "Security with JWT in HttpOnly cookies, dynamic permission-based authorization policies, rate limiting and CORS.",
+      "h4": "Azure Functions for hourly e-invoice (NF-e) import and daily bank balance snapshots; Azure Blob Storage for files.",
+      "h5": "Integrations with an e-invoicing API (Focus NFe) and company registry lookup; PDF reports with QuestPDF and Excel export.",
+      "h6": "Angular 18 front end with standalone components, Angular Material and Bootstrap 5, including responsive report pages for mobile and desktop.",
+      "h7": "Spec-first workflow: each feature is documented and approved before implementation, using AI-assisted development.",
+      "gallery": {
+        "contasReceber": "Accounts Receivable: breakdown by revenue type, payment method and top customers",
+        "vendas": "Sales: breakdown by revenue type, drilling down into product groups and products"
+      },
+      "galleryNote": "Screens show fictitious data from a test environment."
+    }
+  },
+  "lightbox": {
+    "dialogLabel": "Image viewer",
+    "close": "Close",
+    "previous": "Previous image",
+    "next": "Next image",
+    "counter": "Image {{current}} of {{total}}"
+  },
+  "education": {
+    "postgrad": {
+      "degree": "Postgraduate Degree in .NET Software Architecture",
+      "period": "Apr 2024 – Apr 2025"
+    },
+    "expert": {
+      "degree": "ASP.NET Core & .NET Expert Program",
+      "period": "Apr 2023 – Apr 2024",
+      "details": "API development, SOLID, CQRS, Repository pattern, Clean and Hexagonal Architecture, Modular Monoliths, Microservices, TDD, caching and resilience."
+    },
+    "bachelor": {
+      "degree": "B.S. in Information Systems",
+      "period": "Jan 2011 – Feb 2015"
+    },
+    "languages": {
+      "title": "Languages",
+      "portuguese": "Portuguese — Native",
+      "english": "English — Advanced"
+    }
+  },
+  "contact": {
+    "title": "Let's talk",
+    "text": "I'm open to remote opportunities and new projects. Feel free to reach out."
+  },
+  "footer": {
+    "copyright": "© {{year}} Murilo Barros Cardoso",
+    "builtWith": "Built with Angular"
+  }
+}

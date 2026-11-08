@@ -1,15 +1,20 @@
 import { TestBed } from '@angular/core/testing';
+
 import { App } from './app';
+import { provideI18n } from './core/provide-i18n';
 
 describe('App', () => {
   beforeEach(async () => {
+    localStorage.clear();
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: [provideI18n()],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('should create the app', async () => {
     const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
     expect(fixture.componentInstance).toBeTruthy();
   });
 

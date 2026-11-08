@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "title": "Murilo Barros Cardoso · Engenheiro de Software Full-Stack",
+    "description": "Desenvolvedor full-stack com 5+ anos em C#/.NET, Angular, SQL Server e Azure. Pipelines de alto volume e ERP em produção."
+  },
+  "a11y": {
+    "skipToContent": "Pular para o conteúdo",
+    "home": "Murilo Cardoso, voltar ao início",
+    "mainNav": "Navegação principal",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "themeToDark": "Ativar tema escuro",
+    "themeToLight": "Ativar tema claro",
+    "languageSelector": "Idioma",
+    "langPt": "Português (Brasil)",
+    "langEn": "English (US)",
+    "socialLinks": "Redes e contato",
+    "opensInNewTab": "(abre em nova aba)"
+  },
+  "nav": {
+    "about": "Sobre",
+    "skills": "Skills",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "education": "Formação",
+    "contact": "Contato"
+  },
+  "social": {
+    "email": "E-mail",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "title": "Engenheiro de Software Full-Stack",
+    "stack": ".NET / C# • Angular • SQL Server • Azure",
+    "tagline": "Construo sistemas confiáveis com .NET e Angular, de pipelines que processam dezenas de milhões de linhas a um ERP em produção.",
+    "location": "Rio Verde, Brasil (UTC-3) · Disponível para trabalho remoto",
+    "ctaProjects": "Ver projetos",
+    "ctaCv": "Baixar CV (EN)",
+    "photoAlt": "Foto de Murilo Barros Cardoso"
+  },
+  "about": {
+    "p1": "Sou desenvolvedor full-stack com mais de 5 anos de experiência criando aplicações web e APIs REST com C#/.NET e Angular. Acompanhei toda a evolução do .NET, do .NET Core 3.1 ao .NET 10, aplicando Clean Architecture, CQRS e princípios SOLID.",
+    "p2": "Construo pipelines de dados de alto volume, que processam arquivos de até 50 milhões de linhas, e entrego produtos full-stack em produção. Tenho base sólida em SQL Server, de stored procedures a relatórios, além de experiência prática com Azure, mensageria (RabbitMQ, Azure Service Bus), Docker e CI/CD.",
+    "p3": "Sou pós-graduado em Arquitetura de Software .NET. Meus anos de experiência com o ERP TOTVS Protheus nas áreas financeira, de faturamento e de estoque me ajudam a transformar regras de negócio em software confiável.",
+    "highlights": {
+      "years": "anos com C#/.NET e Angular",
+      "lines": "linhas por arquivo em pipelines de dados",
+      "files": "arquivos processados por dia",
+      "erp": "ERP próprio em produção"
+    }
+  },
+  "skills": {
+    "groups": {
+      "backend": "Back end",
+      "frontend": "Front end",
+      "databases": "Banco de dados",
+      "cloud": "Cloud & DevOps",
+      "messaging": "Mensageria",
+      "architecture": "Arquitetura",
+      "quality": "Qualidade e processo",
+      "business": "Sistemas de negócio"
+    },
+    "chips": {
+      "reporting": "Relatórios",
+      "gcpBasic": "GCP (básico)",
+      "unitTesting": "Testes unitários",
+      "caching": "Cache e resiliência",
+      "protheus": "TOTVS Protheus (Contabilidade, Ativo Fixo, Compras, Estoque, Faturamento, Financeiro)"
+    }
+  },
+  "experience": {
+    "remote": "Remoto",
+    "rioVerde": "Rio Verde, Brasil",
+    "codecycle": {
+      "role": "Full-Stack Developer",
+      "period": "Out 2024 – Atual",
+      "b1": "Desenvolvo aplicações web e APIs REST com C#/.NET no back end e AngularJS no front end.",
+      "b2": "Construo e mantenho um pipeline de aplicações console .NET que processa cerca de 50 arquivos TXT/CSV por dia, cada um com 2 a 50 milhões de linhas.",
+      "b3": "Arquitetura em múltiplas etapas: a primeira divide arquivos muito grandes em partes menores, para que as aplicações seguintes leiam e processem em paralelo (multiprocessamento).",
+      "b4": "Escrevo scripts e stored procedures em SQL Server para funcionalidades da aplicação e processamento de dados."
+    },
+    "rivema": {
+      "role": "Analista de Sistemas e Desenvolvedor .NET",
+      "period": "Dez 2023 – Ago 2026",
+      "b1": "Desenvolvi soluções web e APIs em .NET seguindo SOLID e Clean Architecture, com front ends em Angular.",
+      "b2": "Dei suporte, configurei e corrigi o ERP TOTVS Protheus para um grupo de 5 empresas (cerca de 100 colaboradores) nos módulos de Contabilidade Gerencial, Ativo Fixo, Compras, Estoque, Faturamento e Financeiro, além dos módulos DMS (Autopeças, Veículos e Oficina).",
+      "b3": "Criei relatórios de negócio em SQL Server para as 5 empresas.",
+      "b4": "Gerenciei e monitorei servidores e a infraestrutura de TI de todo o grupo."
+    },
+    "gordon": {
+      "role": "Analista de Sistemas e Desenvolvedor .NET",
+      "period": "Abr 2021 – Dez 2023",
+      "b1": "Desenvolvi APIs e soluções web em .NET com SOLID e Clean Architecture em camadas, num time Agile Scrum.",
+      "b2": "Analisei e monitorei o ERP TOTVS, corrigindo erros e bugs via configuração e correções diretas no banco de dados.",
+      "b3": "Criei relatórios em SQL Server, entregues pelos modelos de relatório do ERP e por aplicações web."
+    }
+  },
+  "projects": {
+    "highlightsTitle": "Destaques",
+    "stackTitle": "Stack",
+    "galleryTitle": "Galeria",
+    "openImage": "Ampliar imagem: {{caption}}",
+    "financial": {
+      "subtitle": "ERP financeiro e operacional multiempresa",
+      "type": "Produto próprio · Back end + front end",
+      "period": "Jan 2023 – presente",
+      "badgeProduction": "Em produção",
+      "badgePrivate": "Código privado",
+      "description": "ERP criado para atender várias empresas. Está em produção no primeiro cliente, uma transportadora, com 7 usuários ativos, e foi projetado para escalar conforme o número de usuários de cada cliente.",
+      "h1": "Contas a pagar e a receber, bancos, notas fiscais, ordens de serviço, comissões e folha de motoristas, contratos de frete de grãos e adiantamentos de clientes.",
+      "h2": "Back end em .NET 10 com Clean Architecture e CQRS (MediatR), EF Core e SQL Server, transações com Unit of Work, soft delete com filtros globais e isolamento de dados por empresa.",
+      "h3": "Segurança com JWT em cookies HttpOnly, políticas de autorização dinâmicas por permissão, rate limiting e CORS.",
+      "h4": "Azure Functions para importação de NF-e a cada hora e snapshots diários de saldos bancários; Azure Blob Storage para arquivos.",
+      "h5": "Integrações com API de NF-e (Focus NFe) e consulta de CNPJ; relatórios em PDF com QuestPDF e exportação para Excel.",
+      "h6": "Front end em Angular 18 com standalone components, Angular Material e Bootstrap 5, com relatórios responsivos para celular e desktop.",
+      "h7": "Fluxo spec-first: cada funcionalidade é documentada e aprovada antes da implementação, com desenvolvimento assistido por IA.",
+      "gallery": {
+        "contasReceber": "Contas a Receber: resumo por natureza, forma de pagamento e maiores clientes",
+        "vendas": "Vendas: resumo por natureza com detalhamento por grupo e produto"
+      },
+      "galleryNote": "Telas com dados fictícios de um ambiente de testes."
+    }
+  },
+  "lightbox": {
+    "dialogLabel": "Visualizador de imagens",
+    "close": "Fechar",
+    "previous": "Imagem anterior",
+    "next": "Próxima imagem",
+    "counter": "Imagem {{current}} de {{total}}"
+  },
+  "education": {
+    "postgrad": {
+      "degree": "Pós-graduação em Arquitetura de Software .NET",
+      "period": "Abr 2024 – Abr 2025"
+    },
+    "expert": {
+      "degree": "Programa ASP.NET Core & .NET Expert",
+      "period": "Abr 2023 – Abr 2024",
+      "details": "Desenvolvimento de APIs, SOLID, CQRS, Repository, Clean e Hexagonal Architecture, Monolitos Modulares, Microsserviços, TDD, cache e resiliência."
+    },
+    "bachelor": {
+      "degree": "Bacharelado em Sistemas de Informação",
+      "period": "Jan 2011 – Fev 2015"
+    },
+    "languages": {
+      "title": "Idiomas",
+      "portuguese": "Português — Nativo",
+      "english": "Inglês — Avançado"
+    }
+  },
+  "contact": {
+    "title": "Vamos conversar?",
+    "text": "Estou aberto a oportunidades remotas e novos projetos. Fique à vontade para me chamar."
+  },
+  "footer": {
+    "copyright": "© {{year}} Murilo Barros Cardoso",
+    "builtWith": "Feito com Angular"
+  }
+}
