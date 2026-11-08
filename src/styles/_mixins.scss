@@ -1,5 +1,6 @@
 // Shared SCSS mixins. Usage in component styles: `@use 'styles/mixins' as m;`
 
+@use 'sass:list';
 @use 'sass:map';
 
 $breakpoints: (
@@ -26,6 +27,25 @@ $breakpoints: (
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/// Smooth color change when the theme switches (disabled with reduced motion).
+@mixin theme-transition($properties...) {
+  @if list.length($properties) == 0 {
+    $properties: (background-color, color, border-color);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    $transitions: ();
+    @each $property in $properties {
+      $transitions: list.append(
+        $transitions,
+        $property var(--theme-transition-duration) ease,
+        $separator: comma
+      );
+    }
+    transition: $transitions;
+  }
 }
 
 /// Styles applied only when the user has not asked for reduced motion.

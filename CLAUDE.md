@@ -45,6 +45,8 @@ Fases sugeridas:
 
 **Decisões da Fase 1:** Angular 22.2 / TypeScript 6.0 (exige Node ≥ 24.15). `outputMode: "static"` no `angular.json`, sem Express/`server.ts`. Saída do browser em `dist/portfolio-angular/browser`. ESLint (`angular-eslint`) + Prettier (`eslint-config-prettier`), com regras que exigem OnPush, signals, `@if`/`@for` e `ngSrc`. Estilos globais importáveis como `@use 'styles/mixins'` (`includePaths: ["src"]`). Scripts: `npm run lint`, `npm run format`, `npm test`.
 
+**Decisões da Fase 2:** além dos tokens da tabela de tema, `_tokens.scss` define `--success`/`--success-bg` (selo "Em produção"), `--shadow-sm`/`--shadow-md` (`none` no dark), `--header-bg`, `--hero-gradient`, `--focus-ring` e raios. Sem JS, o tema segue `prefers-color-scheme` via media query. O `ThemeService` também acompanha mudanças do SO ao vivo enquanto não houver escolha salva. Use o mixin `theme-transition` nos componentes com cor de fundo/borda própria.
+
 ### Cuidados com SSG
 
 - Qualquer acesso a `window`, `document`, `localStorage` ou `matchMedia` deve ser protegido (`isPlatformBrowser`, `afterNextRender` ou injeção de `DOCUMENT`), para não quebrar a pré-renderização.
