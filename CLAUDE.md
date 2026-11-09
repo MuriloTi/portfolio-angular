@@ -79,6 +79,12 @@ Fases sugeridas:
 - Performance: `appReveal` mede na fase `earlyRead` e altera classes na fase `write` do `afterNextRender` (sem reflows forçados em série). Inter carrega só os pesos 400–700, então nenhum CSS usa 800. O `NgOptimizedImage` com `priority` gera o `<link rel="preload">` da foto do Hero.
 - Lighthouse local (build com `--base-href`, servidor com gzip imitando o GitHub Pages): Acessibilidade, Boas práticas e SEO = 100. Performance: desktop 98; mobile 97 com CPU calibrada (1,5×). Com o padrão de 4× a nota mobile fica em ~65–70, porque esta máquina tem `benchmarkIndex` ~550 e o próprio Lighthouse avisa que a CPU é mais lenta que a esperada. Confirmar com o PageSpeed Insights após o deploy. Testado e descartado: `content-visibility: auto` nas seções (sem ganho mensurável e com risco de errar a posição das âncoras).
 
+**Decisões da Fase 8:**
+
+- Workflow `.github/workflows/deploy.yml`: jobs `build` e `deploy`, em push na `master` ou manual. Node fixado em **24** (não `lts/*`, pois o Angular 22 exige ≥ 24.15 e esse é o mesmo major do desenvolvimento local), com cache npm. Além do especificado, roda `npm run lint` e `ng test --watch=false` antes do build, para que um erro não chegue ao site. `concurrency: pages` sem cancelar deploy em andamento.
+- O `package-lock.json` já contém os binários Linux (esbuild, rolldown, lmdb), então `npm ci` funciona no runner `ubuntu-latest`. Não é preciso `.nojekyll` nem `404.html`: o deploy via Actions não passa pelo Jekyll e o site tem rota única (âncoras `#`).
+- `README.md` reescrito (descrição, stack, como rodar, estrutura, deploy).
+
 ### Cuidados com SSG
 
 - Qualquer acesso a `window`, `document`, `localStorage` ou `matchMedia` deve ser protegido (`isPlatformBrowser`, `afterNextRender` ou injeção de `DOCUMENT`), para não quebrar a pré-renderização.
