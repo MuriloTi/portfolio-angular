@@ -87,6 +87,6 @@ export const SKILL_GROUPS: readonly SkillGroup[] = [
   {
     id: 'business',
     titleKey: 'skills.groups.business',
-    chips: [key('skills.chips.protheus'), ...names('DMS')],
+    chips: [key('skills.chips.protheus')],
   },
 ];

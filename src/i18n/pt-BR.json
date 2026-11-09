@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Murilo Barros Cardoso · Engenheiro de Software Full-Stack",
-    "description": "Desenvolvedor full-stack com 5+ anos em C#/.NET, Angular, SQL Server e Azure. Pipelines de alto volume e ERP em produção."
+    "description": "Desenvolvedor full-stack com 5+ anos em C#/.NET, Angular, SQL Server e Azure. Pipelines de alto volume e sistema financeiro em produção."
   },
   "a11y": {
     "skipToContent": "Pular para o conteúdo",
@@ -34,21 +34,21 @@
     "greeting": "Olá, eu sou",
     "title": "Engenheiro de Software Full-Stack",
     "stack": ".NET / C# • Angular • SQL Server • Azure",
-    "tagline": "Construo sistemas confiáveis com .NET e Angular, de pipelines que processam dezenas de milhões de linhas a um ERP em produção.",
+    "tagline": "Construo sistemas confiáveis com .NET e Angular, desde pipelines de aplicações que processam dezenas de milhões de linhas a um sistema financeiro que tenho em produção.",
     "location": "Rio Verde, Brasil (UTC-3) · Disponível para trabalho remoto",
     "ctaProjects": "Ver projetos",
     "ctaCv": "Baixar CV (EN)",
     "photoAlt": "Foto de Murilo Barros Cardoso"
   },
   "about": {
-    "p1": "Sou desenvolvedor full-stack com mais de 5 anos de experiência criando aplicações web e APIs REST com C#/.NET e Angular. Acompanhei toda a evolução do .NET, do .NET Core 3.1 ao .NET 10, aplicando Clean Architecture, CQRS e princípios SOLID.",
-    "p2": "Construo pipelines de dados de alto volume, que processam arquivos de até 50 milhões de linhas, e entrego produtos full-stack em produção. Tenho base sólida em SQL Server, de stored procedures a relatórios, além de experiência prática com Azure, mensageria (RabbitMQ, Azure Service Bus), Docker e CI/CD.",
-    "p3": "Sou pós-graduado em Arquitetura de Software .NET. Meus anos de experiência com o ERP TOTVS Protheus nas áreas financeira, de faturamento e de estoque me ajudam a transformar regras de negócio em software confiável.",
+    "p1": "Sou desenvolvedor full-stack com mais de 5 anos de experiência criando aplicações web e APIs REST com C#/.NET e Angular. Acompanhei a evolução do .NET, desde o .NET Core 3.1 ao .NET 10, aplicando Clean Architecture, CQRS e princípios SOLID.",
+    "p2": "Construo pipelines de aplicações de dados de alto volume, que processam arquivos de até 50 milhões de linhas, e entrego produtos full-stack em produção. Tenho base sólida em SQL Server, desde stored procedures a relatórios, além de experiência prática com Azure, mensageria (RabbitMQ, Azure Service Bus), Docker e CI/CD.",
+    "p3": "Sou pós-graduado em Arquitetura de Software .NET. Meus anos de experiência com o ERP TOTVS nas áreas financeira, de faturamento e de estoque me ajudam a transformar regras de negócio em software.",
     "highlights": {
       "years": "anos com C#/.NET e Angular",
       "lines": "linhas por arquivo em pipelines de dados",
       "files": "arquivos processados por dia",
-      "erp": "ERP próprio em produção"
+      "system": "sistema financeiro próprio em produção"
     }
   },
   "skills": {
@@ -67,7 +67,7 @@
       "gcpBasic": "GCP (básico)",
       "unitTesting": "Testes unitários",
       "caching": "Cache e resiliência",
-      "protheus": "TOTVS Protheus (Contabilidade, Ativo Fixo, Compras, Estoque, Faturamento, Financeiro)"
+      "protheus": "TOTVS Protheus (Contabilidade, Ativo Fixo, Compras, Estoque, Faturamento, Financeiro, DMS – Oficina, Veículos e Autopeças)"
     }
   },
   "experience": {
@@ -78,7 +78,7 @@
       "period": "Out 2024 – Atual",
       "b1": "Desenvolvo aplicações web e APIs REST com C#/.NET no back end e AngularJS no front end.",
       "b2": "Construo e mantenho um pipeline de aplicações console .NET que processa cerca de 50 arquivos TXT/CSV por dia, cada um com 2 a 50 milhões de linhas.",
-      "b3": "Arquitetura em múltiplas etapas: a primeira divide arquivos muito grandes em partes menores, para que as aplicações seguintes leiam e processem em paralelo (multiprocessamento).",
+      "b3": "Arquitetura em múltiplas etapas: cada aplicação executa em uma etapa do processo, a primeira divide arquivos muito grandes em partes menores, para que as aplicações seguintes leiam e processem em paralelo (multiprocessamento).",
       "b4": "Escrevo scripts e stored procedures em SQL Server para funcionalidades da aplicação e processamento de dados."
     },
     "rivema": {
@@ -105,10 +105,10 @@
     "badgeProduction": "Em produção",
     "badgePrivate": "Código privado",
     "financial": {
-      "subtitle": "ERP financeiro e operacional multiempresa",
+      "subtitle": "Sistema financeiro e operacional multiempresa",
       "type": "Produto próprio · Back end + front end",
       "period": "Jan 2023 – presente",
-      "description": "ERP criado para atender várias empresas. Está em produção no primeiro cliente, uma transportadora, com 7 usuários ativos, e foi projetado para escalar conforme o número de usuários de cada cliente.",
+      "description": "Sistema financeiro criado para atender várias empresas. Já está em produção no primeiro cliente e foi projetado para escalar conforme o número de usuários de cada cliente.",
       "h1": "Contas a pagar e a receber, bancos, notas fiscais, ordens de serviço, comissões e folha de motoristas, contratos de frete de grãos e adiantamentos de clientes.",
       "h2": "Back end em .NET 10 com Clean Architecture e CQRS (MediatR), EF Core e SQL Server, transações com Unit of Work, soft delete com filtros globais e isolamento de dados por empresa.",
       "h3": "Segurança com JWT em cookies HttpOnly, políticas de autorização dinâmicas por permissão, rate limiting e CORS.",

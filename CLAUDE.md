@@ -202,10 +202,10 @@ Animações: entrada suave das seções ao rolar (fade/slide curto), respeitando
 
 ### Meta / SEO
 
-| Chave       | PT-BR                                                                                                                     | EN-US                                                                                                                              |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| title       | Murilo Barros Cardoso · Engenheiro de Software Full-Stack                                                                 | Murilo Barros Cardoso · Full-Stack Software Engineer                                                                               |
-| description | Desenvolvedor full-stack com 5+ anos em C#/.NET, Angular, SQL Server e Azure. Pipelines de alto volume e ERP em produção. | Full-stack developer with 5+ years in C#/.NET, Angular, SQL Server and Azure. High-volume data pipelines and an ERP in production. |
+| Chave       | PT-BR                                                                                                                                    | EN-US                                                                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| title       | Murilo Barros Cardoso · Engenheiro de Software Full-Stack                                                                                | Murilo Barros Cardoso · Full-Stack Software Engineer                                                                                           |
+| description | Desenvolvedor full-stack com 5+ anos em C#/.NET, Angular, SQL Server e Azure. Pipelines de alto volume e sistema financeiro em produção. | Full-stack developer with 5+ years in C#/.NET, Angular, SQL Server and Azure. High-volume data pipelines and a financial system in production. |
 
 ### Navegação
 
@@ -220,43 +220,43 @@ Animações: entrada suave das seções ao rolar (fade/slide curto), respeitando
 
 ### Hero
 
-| Item        | PT-BR                                                                                                                          | EN-US                                                                                                                                     |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Saudação    | Olá, eu sou                                                                                                                    | Hi, I'm                                                                                                                                   |
-| Título      | Engenheiro de Software Full-Stack                                                                                              | Full-Stack Software Engineer                                                                                                              |
-| Stack       | .NET / C# • Angular • SQL Server • Azure                                                                                       | .NET / C# • Angular • SQL Server • Azure                                                                                                  |
-| Tagline     | Construo sistemas confiáveis com .NET e Angular, de pipelines que processam dezenas de milhões de linhas a um ERP em produção. | I build reliable systems with .NET and Angular, from data pipelines processing tens of millions of lines to an ERP running in production. |
-| Localização | Rio Verde, Brasil (UTC-3) · Disponível para trabalho remoto                                                                    | Rio Verde, Brazil (UTC-3) · Open to remote work                                                                                           |
-| Botão 1     | Ver projetos                                                                                                                   | View projects                                                                                                                             |
-| Botão 2     | Baixar CV (EN)                                                                                                                 | Download CV                                                                                                                               |
-| Alt da foto | Foto de Murilo Barros Cardoso                                                                                                  | Photo of Murilo Barros Cardoso                                                                                                            |
+| Item        | PT-BR                                                                                                                                                                    | EN-US                                                                                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Saudação    | Olá, eu sou                                                                                                                                                              | Hi, I'm                                                                                                                                                                |
+| Título      | Engenheiro de Software Full-Stack                                                                                                                                        | Full-Stack Software Engineer                                                                                                                                           |
+| Stack       | .NET / C# • Angular • SQL Server • Azure                                                                                                                                 | .NET / C# • Angular • SQL Server • Azure                                                                                                                               |
+| Tagline     | Construo sistemas confiáveis com .NET e Angular, desde pipelines de aplicações que processam dezenas de milhões de linhas a um sistema financeiro que tenho em produção. | I build reliable systems with .NET and Angular, from application pipelines processing tens of millions of lines to a financial system of my own running in production. |
+| Localização | Rio Verde, Brasil (UTC-3) · Disponível para trabalho remoto                                                                                                              | Rio Verde, Brazil (UTC-3) · Open to remote work                                                                                                                        |
+| Botão 1     | Ver projetos                                                                                                                                                             | View projects                                                                                                                                                          |
+| Botão 2     | Baixar CV (EN)                                                                                                                                                           | Download CV                                                                                                                                                            |
+| Alt da foto | Foto de Murilo Barros Cardoso                                                                                                                                            | Photo of Murilo Barros Cardoso                                                                                                                                         |
 
 ### Sobre
 
 **PT-BR**
 
-> Sou desenvolvedor full-stack com mais de 5 anos de experiência criando aplicações web e APIs REST com C#/.NET e Angular. Acompanhei toda a evolução do .NET, do .NET Core 3.1 ao .NET 10, aplicando Clean Architecture, CQRS e princípios SOLID.
+> Sou desenvolvedor full-stack com mais de 5 anos de experiência criando aplicações web e APIs REST com C#/.NET e Angular. Acompanhei a evolução do .NET, desde o .NET Core 3.1 ao .NET 10, aplicando Clean Architecture, CQRS e princípios SOLID.
 >
-> Construo pipelines de dados de alto volume, que processam arquivos de até 50 milhões de linhas, e entrego produtos full-stack em produção. Tenho base sólida em SQL Server, de stored procedures a relatórios, além de experiência prática com Azure, mensageria (RabbitMQ, Azure Service Bus), Docker e CI/CD.
+> Construo pipelines de aplicações de dados de alto volume, que processam arquivos de até 50 milhões de linhas, e entrego produtos full-stack em produção. Tenho base sólida em SQL Server, desde stored procedures a relatórios, além de experiência prática com Azure, mensageria (RabbitMQ, Azure Service Bus), Docker e CI/CD.
 >
-> Sou pós-graduado em Arquitetura de Software .NET. Meus anos de experiência com o ERP TOTVS Protheus nas áreas financeira, de faturamento e de estoque me ajudam a transformar regras de negócio em software confiável.
+> Sou pós-graduado em Arquitetura de Software .NET. Meus anos de experiência com o ERP TOTVS nas áreas financeira, de faturamento e de estoque me ajudam a transformar regras de negócio em software.
 
 **EN-US**
 
-> I'm a full-stack developer with 5+ years of experience building web applications and REST APIs with C#/.NET and Angular. I've worked across the full .NET evolution, from .NET Core 3.1 to .NET 10, applying Clean Architecture, CQRS and SOLID principles.
+> I'm a full-stack developer with 5+ years of experience building web applications and REST APIs with C#/.NET and Angular. I've followed the evolution of .NET, from .NET Core 3.1 to .NET 10, applying Clean Architecture, CQRS and SOLID principles.
 >
-> I build high-volume data pipelines that process files of up to 50 million lines, and I ship full-stack products to production. I have a strong SQL Server background, from stored procedures to reporting, plus hands-on work with Azure, messaging (RabbitMQ, Azure Service Bus), Docker and CI/CD.
+> I build high-volume data pipelines made up of multiple applications, processing files of up to 50 million lines, and I ship full-stack products to production. I have a strong SQL Server background, from stored procedures to reporting, plus hands-on experience with Azure, messaging (RabbitMQ, Azure Service Bus), Docker and CI/CD.
 >
-> I hold a postgraduate degree in .NET Software Architecture. Years of ERP experience (TOTVS Protheus) in finance, billing and inventory help me translate business rules into reliable software.
+> I hold a postgraduate degree in .NET Software Architecture. Years of ERP experience (TOTVS) in finance, billing and inventory help me translate business rules into software.
 
 **Destaques (cards numéricos)**
 
-| Número | PT-BR                                    | EN-US                            |
-| ------ | ---------------------------------------- | -------------------------------- |
-| 5+     | anos com C#/.NET e Angular               | years with C#/.NET and Angular   |
-| 50M    | linhas por arquivo em pipelines de dados | lines per file in data pipelines |
-| ~50    | arquivos processados por dia             | files processed per day          |
-| 1      | ERP próprio em produção                  | own ERP in production            |
+| Número | PT-BR                                    | EN-US                              |
+| ------ | ---------------------------------------- | ---------------------------------- |
+| 5+     | anos com C#/.NET e Angular               | years with C#/.NET and Angular     |
+| 50M    | linhas por arquivo em pipelines de dados | lines per file in data pipelines   |
+| ~50    | arquivos processados por dia             | files processed per day            |
+| 1      | sistema financeiro próprio em produção   | own financial system in production |
 
 ### Skills
 
@@ -269,7 +269,7 @@ Títulos dos grupos (PT-BR / EN-US) e chips (não traduzir):
 - **Mensageria / Messaging:** RabbitMQ, Azure Service Bus
 - **Arquitetura / Architecture:** Clean Architecture, Hexagonal, Modular Monolith, Microservices, CQRS, Repository, Unit of Work, SOLID
 - **Qualidade e processo / Quality & Process:** Testes unitários / Unit testing, TDD, Cache e resiliência / Caching & resilience, Agile / Scrum
-- **Sistemas de negócio / Business systems:** TOTVS Protheus (Contabilidade, Ativo Fixo, Compras, Estoque, Faturamento, Financeiro / Accounting, Fixed Assets, Purchasing, Inventory, Billing, Finance), DMS
+- **Sistemas de negócio / Business systems:** um único chip traduzido: TOTVS Protheus (Contabilidade, Ativo Fixo, Compras, Estoque, Faturamento, Financeiro, DMS – Oficina, Veículos e Autopeças) / TOTVS Protheus (Accounting, Fixed Assets, Purchasing, Inventory, Billing, Finance, DMS – Service Shop, Vehicles and Auto Parts)
 
 ### Experiência (mais recente primeiro)
 
@@ -279,14 +279,14 @@ PT-BR:
 
 - Desenvolvo aplicações web e APIs REST com C#/.NET no back end e AngularJS no front end.
 - Construo e mantenho um pipeline de aplicações console .NET que processa cerca de 50 arquivos TXT/CSV por dia, cada um com 2 a 50 milhões de linhas.
-- Arquitetura em múltiplas etapas: a primeira divide arquivos muito grandes em partes menores, para que as aplicações seguintes leiam e processem em paralelo (multiprocessamento).
+- Arquitetura em múltiplas etapas: cada aplicação executa em uma etapa do processo, a primeira divide arquivos muito grandes em partes menores, para que as aplicações seguintes leiam e processem em paralelo (multiprocessamento).
 - Escrevo scripts e stored procedures em SQL Server para funcionalidades da aplicação e processamento de dados.
 
 EN-US:
 
 - Develop web applications and REST APIs with C#/.NET on the back end and AngularJS on the front end.
 - Build and maintain a pipeline of .NET console applications that processes about 50 TXT/CSV files per day, each with 2 to 50 million lines.
-- Multi-stage design: the first stage splits very large files into smaller chunks so downstream applications can read and process them in parallel (multiprocessing).
+- Multi-stage design: each application runs one stage of the process; the first splits very large files into smaller chunks so downstream applications can read and process them in parallel (multiprocessing).
 - Write SQL Server scripts and stored procedures supporting application features and data processing.
 
 **2. Grupo Rivema** — Analista de Sistemas e Desenvolvedor .NET / Systems Analyst & .NET Developer · Rio Verde, Brasil / Brazil · Dez 2023 – Ago 2026 / Dec 2023 – Aug 2026
@@ -323,21 +323,23 @@ EN-US:
 
 **Financial**
 
-| Item      | PT-BR                                     | EN-US                                    |
-| --------- | ----------------------------------------- | ---------------------------------------- |
-| Subtítulo | ERP financeiro e operacional multiempresa | Multi-company Financial & Operations ERP |
-| Tipo      | Produto próprio · Back end + front end    | Own product · Back end + front end       |
-| Período   | Jan 2023 – presente                       | Jan 2023 – present                       |
-| Selo 1    | Em produção                               | In production                            |
-| Selo 2    | Código privado                            | Private code                             |
+Nomenclatura: chamar de "sistema financeiro" (não "ERP") enquanto não tiver todos os módulos; quando estiver completo, trocar para ERP em `meta.description`, `hero.tagline`, `about.highlights.system` e `projects.financial.*`. Não expor o tipo de cliente nem o número de usuários.
+
+| Item      | PT-BR                                         | EN-US                                       |
+| --------- | --------------------------------------------- | ------------------------------------------- |
+| Subtítulo | Sistema financeiro e operacional multiempresa | Multi-company Financial & Operations System |
+| Tipo      | Produto próprio · Back end + front end        | Own product · Back end + front end          |
+| Período   | Jan 2023 – presente                           | Jan 2023 – present                          |
+| Selo 1    | Em produção                                   | In production                               |
+| Selo 2    | Código privado                                | Private code                                |
 
 Descrição PT-BR:
 
-> ERP criado para atender várias empresas. Está em produção no primeiro cliente, uma transportadora, com 7 usuários ativos, e foi projetado para escalar conforme o número de usuários de cada cliente.
+> Sistema financeiro criado para atender várias empresas. Já está em produção no primeiro cliente e foi projetado para escalar conforme o número de usuários de cada cliente.
 
 Descrição EN-US:
 
-> An ERP built to serve multiple businesses. It runs in production at its first client, a trucking company, with 7 active users, and is designed to scale with each client's headcount.
+> A financial system built to serve multiple businesses. It already runs in production at its first client and is designed to scale with each client's headcount.
 
 Destaques PT-BR:
 

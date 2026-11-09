@@ -10,5 +10,5 @@ export const ABOUT_HIGHLIGHTS: readonly Highlight[] = [
   { value: '5+', labelKey: 'about.highlights.years' },
   { value: '50M', labelKey: 'about.highlights.lines' },
   { value: '~50', labelKey: 'about.highlights.files' },
-  { value: '1', labelKey: 'about.highlights.erp' },
+  { value: '1', labelKey: 'about.highlights.system' },
 ];
