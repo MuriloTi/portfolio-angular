@@ -35,7 +35,7 @@
     "title": "Full-Stack Software Engineer",
     "stack": ".NET / C# • Angular • SQL Server • Azure",
     "tagline": "I build reliable systems with .NET and Angular, from application pipelines processing tens of millions of lines to a financial system of my own running in production.",
-    "location": "Rio Verde, Brazil (UTC-3) · Open to remote work",
+    "location": "Rio Verde, Brazil (UTC-3)",
     "ctaProjects": "View projects",
     "ctaCv": "Download CV",
     "photoAlt": "Photo of Murilo Barros Cardoso"
@@ -152,7 +152,7 @@
   },
   "contact": {
     "title": "Let's talk",
-    "text": "I'm open to remote opportunities and new projects. Feel free to reach out."
+    "text": "Feel free to reach out."
   },
   "footer": {
     "copyright": "© {{year}} Murilo Barros Cardoso",
