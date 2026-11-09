@@ -1,8 +1,11 @@
 <header class="header" [class.header--solid]="scrolled() || menuOpen()">
   <div class="container header__inner">
-    <a class="brand" href="#top" [attr.aria-label]="'a11y.home' | transloco">
+    <!-- Accessible name comes from the text itself ("Murilo Cardoso, voltar ao início"),
+         so it always contains the visible name (WCAG 2.5.3 Label in Name). -->
+    <a class="brand" href="#top">
       <span class="brand__mark" aria-hidden="true">{{ profile.monogram }}</span>
-      <span class="brand__name" aria-hidden="true">{{ profile.shortName }}</span>
+      <span class="brand__name">{{ profile.shortName }}</span>
+      <span class="visually-hidden">, {{ 'a11y.home' | transloco }}</span>
     </a>
 
     <nav

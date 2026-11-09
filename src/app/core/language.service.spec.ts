@@ -71,4 +71,21 @@ describe('LanguageService', () => {
     expect(meta.getTag('name="description"')?.content).toContain('Full-stack developer');
     expect(localStorage.getItem(LANG_STORAGE_KEY)).toBe('en-US');
   });
+
+  it('keeps Open Graph and Twitter tags in the active language', async () => {
+    const { service, meta } = setup();
+
+    await service.setLang('en-US');
+    expect(meta.getTag('property="og:title"')?.content).toBe(
+      'Murilo Barros Cardoso · Full-Stack Software Engineer',
+    );
+    expect(meta.getTag('property="og:description"')?.content).toContain('Full-stack developer');
+    expect(meta.getTag('property="og:locale"')?.content).toBe('en_US');
+    expect(meta.getTag('property="og:locale:alternate"')?.content).toBe('pt_BR');
+    expect(meta.getTag('name="twitter:title"')?.content).toContain('Full-Stack Software Engineer');
+
+    await service.setLang('pt-BR');
+    expect(meta.getTag('property="og:locale"')?.content).toBe('pt_BR');
+    expect(meta.getTag('property="og:image:alt"')?.content).toBe('Foto de Murilo Barros Cardoso');
+  });
 });

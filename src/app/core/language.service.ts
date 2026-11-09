@@ -6,6 +6,11 @@ import { firstValueFrom } from 'rxjs';
 
 import { DEFAULT_LANG, isLang, Lang, LANG_STORAGE_KEY, langFromBrowser } from './i18n';
 
+/** `pt-BR` → `pt_BR` (Open Graph locale format). */
+function toOgLocale(lang: Lang): string {
+  return lang.replace('-', '_');
+}
+
 /**
  * Active language state.
  *
@@ -48,9 +53,27 @@ export class LanguageService {
   }
 
   private updateDocument(lang: Lang): void {
+    const title = this.translate('meta.title', lang);
+    const description = this.translate('meta.description', lang);
+    const imageAlt = this.translate('hero.photoAlt', lang);
+
     this.document.documentElement.lang = lang;
-    this.title.setTitle(this.translate('meta.title', lang));
-    this.meta.updateTag({ name: 'description', content: this.translate('meta.description', lang) });
+    this.title.setTitle(title);
+    this.meta.updateTag({ name: 'description', content: description });
+
+    // Open Graph / Twitter Card. Crawlers read the prerendered (pt-BR) values; updating them on
+    // language change keeps the document consistent for anything that reads them at runtime.
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({ property: 'og:description', content: description });
+    this.meta.updateTag({ property: 'og:image:alt', content: imageAlt });
+    this.meta.updateTag({ property: 'og:locale', content: toOgLocale(lang) });
+    this.meta.updateTag({
+      property: 'og:locale:alternate',
+      content: toOgLocale(lang === 'pt-BR' ? 'en-US' : 'pt-BR'),
+    });
+    this.meta.updateTag({ name: 'twitter:title', content: title });
+    this.meta.updateTag({ name: 'twitter:description', content: description });
+    this.meta.updateTag({ name: 'twitter:image:alt', content: imageAlt });
   }
 
   private translate(key: string, lang: Lang): string {

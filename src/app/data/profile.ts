@@ -4,7 +4,11 @@ export const PROFILE = {
   name: 'Murilo Barros Cardoso',
   shortName: 'Murilo Cardoso',
   monogram: 'MB',
-  photo: { src: 'images/profile.jpeg', width: 1280, height: 960 },
+  /**
+   * Hero photo: square head-and-shoulders crop of `images/profile.jpeg` (x 156–766, y 0–610),
+   * exported as WebP (~60 KB instead of ~250 KB). The original is kept for `og:image`.
+   */
+  photo: { src: 'images/profile-hero.webp', width: 610, height: 610 },
   cv: 'cv/Murilo-Barros-Cardoso-CV.pdf',
 } as const;
 

@@ -56,7 +56,7 @@ Fases sugeridas:
 - Dados em `data/profile.ts` (nome, foto, CV, links sociais) e `data/navigation.ts`. O Hero usa `id="top"` (destino do logo).
 - Botão de tema: os dois ícones (sol/lua) são renderizados e o CSS mostra o certo a partir de `[data-theme]`, para o HTML pré-renderizado já sair correto.
 - Seletor de idioma: texto visível "PT"/"EN" + nome completo em `.visually-hidden` (o nome acessível contém o texto visível).
-- Foto do Hero: em vez de só `object-fit`/`object-position`, a imagem é ampliada a 210% dentro do círculo (`left: -25.6%`, `top: 0`) para enquadrar cabeça e ombros, mantendo a proporção nativa (sem warnings do `NgOptimizedImage`).
+- Foto do Hero: usa `images/profile-hero.webp` (610×610, ~60 KB), um recorte quadrado de cabeça e ombros de `profile.jpeg` (região x 156–766, y 0–610), criado na Fase 7. O original fica intacto e é usado no `og:image`.
 
 **Decisões da Fase 5:**
 
@@ -71,6 +71,13 @@ Fases sugeridas:
 - Tamanhos reais das imagens: `financial-contas-a-receber.png` 1355×802 e `financial-vendas.png` 1344×924. As miniaturas ficam numa moldura 16:10 que corta a parte de baixo; a imagem mantém a proporção nativa (o `NgOptimizedImage` não aceita `object-fit` como exceção ao aviso de distorção).
 - `shared/lightbox` usa o `<dialog>` nativo com `showModal()`: a página fica inerte (foco preso), Esc fecha pelo evento `cancel` nativo, o clique fora fecha, ← → navegam (com volta ao início), o foco volta à miniatura e a rolagem da página trava via `html:has(dialog[open])`. Os listeners de clique/teclado ficam no host do componente (a regra de lint `interactive-supports-focus` não aceita no `<dialog>`). O contador "Imagem X de Y" é uma região `aria-live` persistente. O visualizador é sempre escuro, independente do tema.
 - Contato: o título da seção é "Vamos conversar?" (`contact.title`), com botão primário de e-mail (mostra o endereço) e secundários LinkedIn/GitHub. Footer fora do `<main>`, com o ano calculado em runtime.
+
+**Decisões da Fase 7:**
+
+- SEO: tags fixas no `index.html` (canonical, `og:type`, `og:url`, `og:image` absoluto com `profile.jpeg` 1280×960, `twitter:card` `summary`, `theme-color` por esquema de cor, favicon `favicon.svg` com o monograma). Tags que dependem do idioma (`description`, `og:title`, `og:description`, `og:locale`, `og:locale:alternate`, `og:image:alt`, `twitter:title`/`description`/`image:alt`) são definidas pelo `LanguageService`, então o HTML pré-renderizado já sai em pt-BR. O `favicon.ico` do scaffold (logo do Angular) foi removido. Sem `robots.txt`/sitemap: no GitHub Pages de projeto eles ficariam em `/portfolio-angular/`, e os crawlers só leem `robots.txt` na raiz do domínio.
+- Acessibilidade: o link do logo não usa `aria-label`; o nome acessível vem do texto ("Murilo Cardoso" + ", voltar ao início" em `.visually-hidden`), atendendo WCAG 2.5.3 (o nome visível está contido no nome acessível). No mobile o nome fica visualmente oculto, mas é lido.
+- Performance: `appReveal` mede na fase `earlyRead` e altera classes na fase `write` do `afterNextRender` (sem reflows forçados em série). Inter carrega só os pesos 400–700, então nenhum CSS usa 800. O `NgOptimizedImage` com `priority` gera o `<link rel="preload">` da foto do Hero.
+- Lighthouse local (build com `--base-href`, servidor com gzip imitando o GitHub Pages): Acessibilidade, Boas práticas e SEO = 100. Performance: desktop 98; mobile 97 com CPU calibrada (1,5×). Com o padrão de 4× a nota mobile fica em ~65–70, porque esta máquina tem `benchmarkIndex` ~550 e o próprio Lighthouse avisa que a CPU é mais lenta que a esperada. Confirmar com o PageSpeed Insights após o deploy. Testado e descartado: `content-visibility: auto` nas seções (sem ganho mensurável e com risco de errar a posição das âncoras).
 
 ### Cuidados com SSG
 

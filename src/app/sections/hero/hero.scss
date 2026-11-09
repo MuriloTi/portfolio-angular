@@ -31,7 +31,7 @@
   &__name {
     margin-top: 0.25rem;
     font-size: clamp(2.25rem, 1.6rem + 3vw, 3.5rem);
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
   }
@@ -100,11 +100,8 @@
     box-shadow: var(--shadow-md);
   }
 
-  // The source photo is landscape (1280×960) with the face left of center (~36% × 25%).
-  // Instead of a plain object-fit crop (which would show the whole torso), the image is scaled
-  // inside the circle so head and shoulders fill it. Width 210% keeps the native aspect ratio.
+  // The photo file is already a square head-and-shoulders crop (see PROFILE.photo).
   &__photo-frame {
-    position: relative;
     width: clamp(180px, 42vw, 220px);
     aspect-ratio: 1;
     overflow: hidden;
@@ -116,11 +113,8 @@
     }
 
     img {
-      position: absolute;
-      top: 0;
-      left: -25.6%;
-      width: 210%;
-      max-width: none;
+      display: block;
+      width: 100%;
       height: auto;
     }
   }

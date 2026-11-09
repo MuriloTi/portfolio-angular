@@ -48,11 +48,19 @@
     letter-spacing: 0.02em;
   }
 
+  // Hidden visually on small screens but still read by screen readers.
   &__name {
-    display: none;
+    @include m.visually-hidden;
 
     @include m.from(sm) {
-      display: inline;
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      clip-path: none;
+      white-space: normal;
     }
   }
 }
