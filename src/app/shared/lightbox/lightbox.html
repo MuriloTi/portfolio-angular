@@ -1,0 +1,58 @@
+<dialog
+  #dialog
+  class="lightbox"
+  [attr.aria-label]="'lightbox.dialogLabel' | transloco"
+  (close)="onClosed()"
+>
+  <!-- Buttons are always in the DOM so showModal() focuses the close button. -->
+  <button
+    type="button"
+    class="lightbox__button lightbox__close"
+    [attr.aria-label]="'lightbox.close' | transloco"
+    (click)="close()"
+  >
+    <app-icon name="close" [size]="22" />
+  </button>
+
+  @if (total() > 1) {
+    <button
+      type="button"
+      class="lightbox__button lightbox__nav lightbox__nav--prev"
+      [attr.aria-label]="'lightbox.previous' | transloco"
+      (click)="previous()"
+    >
+      <app-icon name="chevron-left" [size]="26" />
+    </button>
+    <button
+      type="button"
+      class="lightbox__button lightbox__nav lightbox__nav--next"
+      [attr.aria-label]="'lightbox.next' | transloco"
+      (click)="next()"
+    >
+      <app-icon name="chevron-right" [size]="26" />
+    </button>
+  }
+
+  @if (index() !== null) {
+    <div class="lightbox__content">
+      @for (image of images(); track image.src) {
+        @if ($index === index()) {
+          <figure class="lightbox__figure">
+            <img
+              class="lightbox__image"
+              [ngSrc]="image.src"
+              [width]="image.width"
+              [height]="image.height"
+              [alt]="image.captionKey | transloco"
+            />
+            <figcaption class="lightbox__caption">{{ image.captionKey | transloco }}</figcaption>
+          </figure>
+        }
+      }
+      <!-- Persistent live region: announces the position when navigating. -->
+      <p class="lightbox__counter" aria-live="polite">
+        {{ 'lightbox.counter' | transloco: { current: (index() ?? 0) + 1, total: total() } }}
+      </p>
+    </div>
+  }
+</dialog>

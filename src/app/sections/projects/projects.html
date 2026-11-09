@@ -1,0 +1,91 @@
+<section id="projects" class="section" aria-labelledby="projects-title">
+  <div class="container">
+    <app-section-title headingId="projects-title" titleKey="nav.projects" />
+
+    @for (project of projects; track project.id) {
+      <article class="card project" [attr.aria-labelledby]="project.id + '-title'" appReveal>
+        <header class="project__header">
+          <div class="project__heading">
+            <h3 class="project__title" [id]="project.id + '-title'">{{ project.title }}</h3>
+            <p class="project__subtitle">{{ project.subtitleKey | transloco }}</p>
+            <p class="project__meta">
+              <span>{{ project.typeKey | transloco }}</span>
+              <span class="project__period">{{ project.periodKey | transloco }}</span>
+            </p>
+          </div>
+
+          <ul class="project__badges">
+            @if (project.inProduction) {
+              <li class="badge badge--success">
+                <span class="badge__dot" aria-hidden="true"></span>
+                {{ 'projects.badgeProduction' | transloco }}
+              </li>
+            }
+            @if (project.privateCode) {
+              <li class="badge">
+                <app-icon name="lock" [size]="14" />
+                {{ 'projects.badgePrivate' | transloco }}
+              </li>
+            }
+          </ul>
+        </header>
+
+        <div class="project__body">
+          <div class="project__info">
+            <p class="project__description">{{ project.descriptionKey | transloco }}</p>
+
+            <h4 class="project__label">{{ 'projects.highlightsTitle' | transloco }}</h4>
+            <ul class="project__highlights">
+              @for (key of project.highlightKeys; track key) {
+                <li>{{ key | transloco }}</li>
+              }
+            </ul>
+
+            <h4 class="project__label">{{ 'projects.stackTitle' | transloco }}</h4>
+            <ul class="chip-list">
+              @for (tech of project.stack; track tech) {
+                <li class="chip">{{ tech }}</li>
+              }
+            </ul>
+          </div>
+
+          @if (project.gallery.length) {
+            <div class="project__gallery">
+              <h4 class="project__label">{{ 'projects.galleryTitle' | transloco }}</h4>
+              <ul class="gallery">
+                @for (image of project.gallery; track image.src; let i = $index) {
+                  <li>
+                    <button
+                      type="button"
+                      class="gallery__thumb"
+                      [attr.aria-label]="
+                        'projects.openImage'
+                          | transloco: { caption: (image.captionKey | transloco) }
+                      "
+                      (click)="lightbox.open(i)"
+                    >
+                      <img
+                        [ngSrc]="image.src"
+                        [width]="image.width"
+                        [height]="image.height"
+                        [alt]="image.captionKey | transloco"
+                      />
+                      <span class="gallery__zoom" aria-hidden="true">
+                        <app-icon name="maximize" [size]="18" />
+                      </span>
+                    </button>
+                  </li>
+                }
+              </ul>
+              @if (project.galleryNoteKey; as noteKey) {
+                <p class="project__note">{{ noteKey | transloco }}</p>
+              }
+            </div>
+          }
+        </div>
+
+        <app-lightbox #lightbox [images]="project.gallery" />
+      </article>
+    }
+  </div>
+</section>

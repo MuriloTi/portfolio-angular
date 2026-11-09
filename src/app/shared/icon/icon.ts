@@ -13,7 +13,8 @@ export type IconName =
   | 'map-pin'
   | 'lock'
   | 'chevron-left'
-  | 'chevron-right';
+  | 'chevron-right'
+  | 'maximize';
 
 /**
  * Inline SVG icon. Decorative by default (`aria-hidden`): the accessible name must come from the

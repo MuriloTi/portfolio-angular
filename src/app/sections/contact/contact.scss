@@ -1,0 +1,43 @@
+@use 'styles/mixins' as m;
+
+.contact {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding: 2.5rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--hero-gradient), var(--surface);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  @include m.theme-transition(background-color, border-color);
+
+  @include m.from(md) {
+    padding: 3.5rem 2.5rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.375rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  &__text {
+    max-width: 48ch;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 1.0625rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+}

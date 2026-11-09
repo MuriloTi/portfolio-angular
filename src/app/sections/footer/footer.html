@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__text">
+      {{ 'footer.copyright' | transloco: { year } }}
+      <span aria-hidden="true">·</span>
+      {{ 'footer.builtWith' | transloco }}
+    </p>
+    <app-social-links [iconSize]="18" />
+  </div>
+</footer>

@@ -65,6 +65,13 @@ Fases sugeridas:
 - Ordem das seções no `<main>`: Hero, Sobre, Skills, Experiência, Projetos, Formação, Contato. Formação não tem link no header; o destaque do link ativo observa todas as `main section[id]`, então ao passar por Formação nenhum link fica destacado.
 - Experiência: timeline em `<ol>` com linha em gradiente e marcadores; o emprego atual tem marcador preenchido. Idiomas aparecem num card ao lado da Formação (abaixo dela no mobile).
 
+**Decisões da Fase 6:**
+
+- Projetos em `data/projects.ts` (`PROJECTS`). Para adicionar um projeto: nova entrada no array + chaves `projects.<id>.*` nos dois JSONs. Os selos usam chaves genéricas (`projects.badgeProduction`, `projects.badgePrivate`) e aparecem conforme `inProduction`/`privateCode`; `repositoryUrl` é opcional.
+- Tamanhos reais das imagens: `financial-contas-a-receber.png` 1355×802 e `financial-vendas.png` 1344×924. As miniaturas ficam numa moldura 16:10 que corta a parte de baixo; a imagem mantém a proporção nativa (o `NgOptimizedImage` não aceita `object-fit` como exceção ao aviso de distorção).
+- `shared/lightbox` usa o `<dialog>` nativo com `showModal()`: a página fica inerte (foco preso), Esc fecha pelo evento `cancel` nativo, o clique fora fecha, ← → navegam (com volta ao início), o foco volta à miniatura e a rolagem da página trava via `html:has(dialog[open])`. Os listeners de clique/teclado ficam no host do componente (a regra de lint `interactive-supports-focus` não aceita no `<dialog>`). O contador "Imagem X de Y" é uma região `aria-live` persistente. O visualizador é sempre escuro, independente do tema.
+- Contato: o título da seção é "Vamos conversar?" (`contact.title`), com botão primário de e-mail (mostra o endereço) e secundários LinkedIn/GitHub. Footer fora do `<main>`, com o ano calculado em runtime.
+
 ### Cuidados com SSG
 
 - Qualquer acesso a `window`, `document`, `localStorage` ou `matchMedia` deve ser protegido (`isPlatformBrowser`, `afterNextRender` ou injeção de `DOCUMENT`), para não quebrar a pré-renderização.

@@ -1,0 +1,35 @@
+<section id="contact" class="section" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact" appReveal>
+      <h2 id="contact-title" class="contact__title">{{ 'contact.title' | transloco }}</h2>
+      <p class="contact__text">{{ 'contact.text' | transloco }}</p>
+
+      <ul class="contact__links">
+        @for (link of links; track link.id) {
+          <li>
+            <a
+              class="btn"
+              [class.btn--primary]="link.id === 'email'"
+              [class.btn--secondary]="link.id !== 'email'"
+              [href]="link.href"
+              [attr.target]="link.external ? '_blank' : null"
+              [attr.rel]="link.external ? 'noopener noreferrer' : null"
+              [attr.aria-label]="
+                link.external
+                  ? (link.labelKey | transloco) + ' ' + ('a11y.opensInNewTab' | transloco)
+                  : null
+              "
+            >
+              <app-icon [name]="link.icon" [size]="18" />
+              @if (link.id === 'email') {
+                {{ link.href.replace('mailto:', '') }}
+              } @else {
+                {{ link.labelKey | transloco }}
+              }
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>
