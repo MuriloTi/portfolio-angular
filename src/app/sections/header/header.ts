@@ -84,13 +84,16 @@ export class Header {
     this.destroyRef.onDestroy(() => view.removeEventListener('scroll', update));
   }
 
-  /** Highlights the nav link of the section crossing the middle of the viewport. */
+  /**
+   * Highlights the nav link of the section crossing the middle of the viewport.
+   * Every page section is observed (not only the linked ones), so a section without a link,
+   * such as Education, clears the highlight instead of leaving the previous link active.
+   */
   private trackActiveSection(): void {
     const view = this.document.defaultView;
     if (!view || !('IntersectionObserver' in view)) {
       return;
     }
-    const ids = ['top', ...this.navItems.map((item) => item.id)];
     const observer = new view.IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -101,12 +104,9 @@ export class Header {
       },
       { rootMargin: '-45% 0px -50% 0px' },
     );
-    for (const id of ids) {
-      const section = this.document.getElementById(id);
-      if (section) {
-        observer.observe(section);
-      }
-    }
+    this.document.querySelectorAll('main section[id]').forEach((section) => {
+      observer.observe(section);
+    });
     this.destroyRef.onDestroy(() => observer.disconnect());
   }
 

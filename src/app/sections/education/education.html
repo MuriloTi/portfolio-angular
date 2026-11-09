@@ -1,0 +1,29 @@
+<section id="education" class="section" aria-labelledby="education-title">
+  <div class="container">
+    <app-section-title headingId="education-title" titleKey="nav.education" />
+
+    <div class="education">
+      <ul class="degrees">
+        @for (item of education; track item.id) {
+          <li class="card degree" appReveal>
+            <p class="degree__period">{{ item.periodKey | transloco }}</p>
+            <h3 class="degree__title">{{ item.degreeKey | transloco }}</h3>
+            <p class="degree__institution">{{ item.institution }} · {{ item.place }}</p>
+            @if (item.detailsKey; as detailsKey) {
+              <p class="degree__details">{{ detailsKey | transloco }}</p>
+            }
+          </li>
+        }
+      </ul>
+
+      <div class="card languages" appReveal>
+        <h3 class="languages__title">{{ 'education.languages.title' | transloco }}</h3>
+        <ul class="languages__list">
+          @for (key of languageKeys; track key) {
+            <li>{{ key | transloco }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

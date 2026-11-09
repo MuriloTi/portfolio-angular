@@ -1,0 +1,18 @@
+<section id="skills" class="section" aria-labelledby="skills-title">
+  <div class="container">
+    <app-section-title headingId="skills-title" titleKey="nav.skills" />
+
+    <ul class="skills">
+      @for (group of groups; track group.id) {
+        <li class="card skill-group" appReveal>
+          <h3 class="skill-group__title">{{ group.titleKey | transloco }}</h3>
+          <ul class="chip-list">
+            @for (chip of group.chips; track chip.text) {
+              <li class="chip">{{ chip.translate ? (chip.text | transloco) : chip.text }}</li>
+            }
+          </ul>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

@@ -58,6 +58,13 @@ Fases sugeridas:
 - Seletor de idioma: texto visível "PT"/"EN" + nome completo em `.visually-hidden` (o nome acessível contém o texto visível).
 - Foto do Hero: em vez de só `object-fit`/`object-position`, a imagem é ampliada a 210% dentro do círculo (`left: -25.6%`, `top: 0`) para enquadrar cabeça e ombros, mantendo a proporção nativa (sem warnings do `NgOptimizedImage`).
 
+**Decisões da Fase 5:**
+
+- Dados em `data/skills.ts` (cada chip é um nome literal ou, com `translate: true`, uma chave i18n), `data/experience.ts` e `data/education.ts` (empresas, instituições e locais ficam nos dados, sem tradução).
+- Chips são as classes globais `.chip-list`/`.chip` (fonte mono) em `_utilities.scss`; reutilize-as nos badges de stack dos projetos.
+- Ordem das seções no `<main>`: Hero, Sobre, Skills, Experiência, Projetos, Formação, Contato. Formação não tem link no header; o destaque do link ativo observa todas as `main section[id]`, então ao passar por Formação nenhum link fica destacado.
+- Experiência: timeline em `<ol>` com linha em gradiente e marcadores; o emprego atual tem marcador preenchido. Idiomas aparecem num card ao lado da Formação (abaixo dela no mobile).
+
 ### Cuidados com SSG
 
 - Qualquer acesso a `window`, `document`, `localStorage` ou `matchMedia` deve ser protegido (`isPlatformBrowser`, `afterNextRender` ou injeção de `DOCUMENT`), para não quebrar a pré-renderização.

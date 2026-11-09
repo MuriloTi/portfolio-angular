@@ -1,0 +1,30 @@
+<section id="experience" class="section" aria-labelledby="experience-title">
+  <div class="container">
+    <app-section-title headingId="experience-title" titleKey="nav.experience" />
+
+    <ol class="timeline">
+      @for (job of experiences; track job.id) {
+        <li class="timeline__item" appReveal>
+          <article class="card job">
+            <header class="job__header">
+              <h3 class="job__role">{{ job.roleKey | transloco }}</h3>
+              <p class="job__company">{{ job.company }}</p>
+              <p class="job__meta">
+                <span class="job__period">{{ job.periodKey | transloco }}</span>
+                <span class="job__location">
+                  <app-icon name="map-pin" [size]="16" />
+                  {{ job.locationKey | transloco }}
+                </span>
+              </p>
+            </header>
+            <ul class="job__bullets">
+              @for (key of job.bulletKeys; track key) {
+                <li>{{ key | transloco }}</li>
+              }
+            </ul>
+          </article>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
