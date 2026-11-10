@@ -120,19 +120,19 @@ Os arquivos de `public/` já foram colocados pelo Murilo. Referencie-os com cami
 
 ## Tema (light / dark)
 
-Tokens em CSS custom properties no `:root` e em `[data-theme="dark"]` no elemento `<html>`.
+Paleta azul (trocada do roxo original em 10/11/2026; todos os pares de texto/fundo passam WCAG AA, mínimo ~6:1). Tokens em CSS custom properties no `:root` e em `[data-theme="dark"]` no elemento `<html>`.
 
 | Token                               | Light     | Dark      |
 | ----------------------------------- | --------- | --------- |
-| `--bg`                              | `#FAF8FF` | `#0F0B1A` |
-| `--surface` (cards)                 | `#FFFFFF` | `#1A1428` |
-| `--surface-2` (hover/realce)        | `#F3EEFF` | `#241B38` |
-| `--border`                          | `#E6DEFA` | `#2E2445` |
-| `--primary`                         | `#6D28D9` | `#A78BFA` |
-| `--primary-hover`                   | `#5B21B6` | `#C4B5FD` |
-| `--on-primary` (texto sobre o roxo) | `#FFFFFF` | `#0F0B1A` |
-| `--text`                            | `#1E1B2E` | `#EDE9FE` |
-| `--text-muted`                      | `#5B5570` | `#A39DB8` |
+| `--bg`                              | `#F8FAFF` | `#0A1120` |
+| `--surface` (cards)                 | `#FFFFFF` | `#121B2D` |
+| `--surface-2` (hover/realce)        | `#EEF4FF` | `#1A2540` |
+| `--border`                          | `#DBE5F7` | `#263452` |
+| `--primary`                         | `#1D4ED8` | `#60A5FA` |
+| `--primary-hover`                   | `#1E40AF` | `#93C5FD` |
+| `--on-primary` (texto sobre o azul) | `#FFFFFF` | `#0A1120` |
+| `--text`                            | `#172033` | `#E6EEFC` |
+| `--text-muted`                      | `#4F5B73` | `#9AA8C0` |
 
 Regras:
 
@@ -142,7 +142,7 @@ Regras:
 - Botão no header com ícone de sol/lua, `aria-label` traduzido ("Ativar tema escuro" / "Switch to dark theme" etc.).
 - Transição suave de cores (`transition` em `background-color`/`color`, ~200 ms), desativada com `prefers-reduced-motion`.
 - Contraste mínimo WCAG AA em ambos os temas.
-- Estilo geral: limpo e moderno, cantos arredondados (~12–16 px), sombras sutis no light, bordas sutis no dark. Um gradiente roxo discreto pode aparecer no fundo do Hero.
+- Estilo geral: limpo e moderno, cantos arredondados (~12–16 px), sombras sutis no light, bordas sutis no dark. Um gradiente azul discreto pode aparecer no fundo do Hero.
 
 ## Idiomas (Transloco)
 
@@ -159,10 +159,10 @@ Regras:
 Página única, rolagem suave entre âncoras (`scroll-margin-top` para compensar o header fixo). Layout responsivo, mobile-first; largura máxima do conteúdo ~1120 px.
 
 1. **Header fixo** — logo/nome "Murilo Cardoso" (ou monograma "MB"), links: Sobre, Skills, Experiência, Projetos, Contato. À direita: seletor PT | EN e botão de tema. No mobile, menu hambúrguer acessível (fecha com Esc e ao clicar num link). Fundo com leve blur e borda inferior ao rolar. Destaque do link da seção visível (IntersectionObserver, só no browser).
-2. **Hero** — foto recortada em círculo, com borda/anel roxo. Usa o recorte quadrado `images/profile-hero.webp`, gerado a partir de `images/profile.jpeg` (retrato 1086×1448); veja "Decisões da Fase 4". Nome, título, tagline, localização ("Rio Verde, Brasil · Disponível para trabalho remoto"). Botões: "Ver projetos" (primário, âncora para #projects), "Baixar CV" (secundário, `cv/Murilo-Barros-Cardoso-CV.pdf` com atributo `download`), e ícones de LinkedIn, GitHub e e-mail.
+2. **Hero** — foto recortada em círculo, com borda/anel azul. Usa o recorte quadrado `images/profile-hero.webp`, gerado a partir de `images/profile.jpeg` (retrato 1086×1448); veja "Decisões da Fase 4". Nome, título, tagline, localização ("Rio Verde, Brasil · Disponível para trabalho remoto"). Botões: "Ver projetos" (primário, âncora para #projects), "Baixar CV" (secundário, `cv/Murilo-Barros-Cardoso-CV.pdf` com atributo `download`), e ícones de LinkedIn, GitHub e e-mail.
 3. **Sobre** (`#about`) — texto de resumo + 4 cards de destaques numéricos.
 4. **Skills** (`#skills`) — cards por grupo, cada um com chips das tecnologias.
-5. **Experiência** (`#experience`) — timeline vertical (linha e marcadores roxos), mais recente primeiro.
+5. **Experiência** (`#experience`) — timeline vertical (linha e marcadores azuis), mais recente primeiro.
 6. **Projetos** (`#projects`) — card de destaque do Financial (detalhes abaixo). Os projetos vêm de um array em `data/`, para que novos projetos sejam adicionados só com dados + chaves i18n.
 7. **Formação** (`#education`) — lista/cards.
 8. **Contato** (`#contact`) — frase convidativa e três links: e-mail (`mailto:`), LinkedIn, GitHub. **Não exibir telefone.**
@@ -173,7 +173,7 @@ Animações: entrada suave das seções ao rolar (fade/slide curto), respeitando
 ### Card do projeto Financial
 
 - Título "Financial", subtítulo traduzido, período "Jan 2023 – presente".
-- Selos: "Em produção" (verde/roxo) e "Código privado" (com ícone de cadeado). **Sem link para repositório.**
+- Selos: "Em produção" (verde) e "Código privado" (com ícone de cadeado). **Sem link para repositório.**
 - Badges de stack: .NET 10, C#, Angular 18, SQL Server, EF Core, MediatR, CQRS, Clean Architecture, Azure Functions, Azure Blob Storage, JWT, QuestPDF.
 - Descrição + lista de destaques (ver conteúdo).
 - Galeria com as duas imagens (miniaturas clicáveis). Ao clicar, abre um **lightbox** acessível: foco preso no modal, fecha com Esc e clique fora, setas ← → para navegar, legenda traduzida, `alt` traduzido.
@@ -182,9 +182,9 @@ Animações: entrada suave das seções ao rolar (fade/slide curto), respeitando
 ## SEO, acessibilidade e performance
 
 - `<title>` e `meta description` por idioma; Open Graph (`og:title`, `og:description`, `og:image` usando a foto ou um banner, `og:url`) e Twitter Card.
-- `favicon` simples com o monograma "MB" em roxo (SVG).
+- `favicon` simples com o monograma "MB" em azul (SVG).
 - HTML semântico (`header`, `nav`, `main`, `section` com `aria-labelledby`, `footer`), um único `h1` (o nome no Hero).
-- Navegação completa por teclado, foco visível estilizado em roxo, link "Pular para o conteúdo".
+- Navegação completa por teclado, foco visível estilizado em azul, link "Pular para o conteúdo".
 - Meta: Lighthouse ≥ 90 em Performance, Acessibilidade, Boas práticas e SEO.
 
 ## Deploy (GitHub Pages)

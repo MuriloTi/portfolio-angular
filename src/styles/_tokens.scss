@@ -6,39 +6,39 @@
 @mixin light-theme {
   color-scheme: light;
 
-  --bg: #faf8ff;
+  --bg: #f8faff;
   --surface: #ffffff;
-  --surface-2: #f3eeff;
-  --border: #e6defa;
-  --primary: #6d28d9;
-  --primary-hover: #5b21b6;
+  --surface-2: #eef4ff;
+  --border: #dbe5f7;
+  --primary: #1d4ed8;
+  --primary-hover: #1e40af;
   --on-primary: #ffffff;
-  --text: #1e1b2e;
-  --text-muted: #5b5570;
+  --text: #172033;
+  --text-muted: #4f5b73;
 
   --success: #15803d;
   --success-bg: #dcfce7;
 
-  --shadow-sm: 0 1px 2px rgb(30 27 46 / 6%), 0 1px 3px rgb(30 27 46 / 8%);
-  --shadow-md: 0 4px 12px rgb(76 29 149 / 8%), 0 2px 4px rgb(30 27 46 / 6%);
-  --header-bg: rgb(250 248 255 / 80%);
+  --shadow-sm: 0 1px 2px rgb(23 32 51 / 6%), 0 1px 3px rgb(23 32 51 / 8%);
+  --shadow-md: 0 4px 12px rgb(29 78 216 / 8%), 0 2px 4px rgb(23 32 51 / 6%);
+  --header-bg: rgb(248 250 255 / 80%);
   --hero-gradient:
-    radial-gradient(60% 50% at 15% 10%, rgb(109 40 217 / 12%), transparent 70%),
-    radial-gradient(50% 45% at 90% 20%, rgb(167 139 250 / 14%), transparent 70%);
+    radial-gradient(60% 50% at 15% 10%, rgb(29 78 216 / 12%), transparent 70%),
+    radial-gradient(50% 45% at 90% 20%, rgb(96 165 250 / 14%), transparent 70%);
 }
 
 @mixin dark-theme {
   color-scheme: dark;
 
-  --bg: #0f0b1a;
-  --surface: #1a1428;
-  --surface-2: #241b38;
-  --border: #2e2445;
-  --primary: #a78bfa;
-  --primary-hover: #c4b5fd;
-  --on-primary: #0f0b1a;
-  --text: #ede9fe;
-  --text-muted: #a39db8;
+  --bg: #0a1120;
+  --surface: #121b2d;
+  --surface-2: #1a2540;
+  --border: #263452;
+  --primary: #60a5fa;
+  --primary-hover: #93c5fd;
+  --on-primary: #0a1120;
+  --text: #e6eefc;
+  --text-muted: #9aa8c0;
 
   --success: #4ade80;
   --success-bg: rgb(74 222 128 / 12%);
@@ -46,10 +46,10 @@
   // Dark theme relies on subtle borders instead of shadows.
   --shadow-sm: none;
   --shadow-md: none;
-  --header-bg: rgb(15 11 26 / 80%);
+  --header-bg: rgb(10 17 32 / 80%);
   --hero-gradient:
-    radial-gradient(60% 50% at 15% 10%, rgb(167 139 250 / 16%), transparent 70%),
-    radial-gradient(50% 45% at 90% 20%, rgb(109 40 217 / 22%), transparent 70%);
+    radial-gradient(60% 50% at 15% 10%, rgb(96 165 250 / 16%), transparent 70%),
+    radial-gradient(50% 45% at 90% 20%, rgb(29 78 216 / 22%), transparent 70%);
 }
 
 :root {

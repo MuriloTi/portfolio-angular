@@ -174,7 +174,7 @@
     overflow: hidden;
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    background-color: #0f0b1a;
+    background-color: #0a1120;
     cursor: zoom-in;
     @include m.theme-transition(border-color);
 
@@ -209,6 +209,6 @@
     height: 34px;
     border-radius: var(--radius-full);
     color: #fff;
-    background-color: rgb(15 11 26 / 75%);
+    background-color: rgb(10 17 32 / 75%);
   }
 }
